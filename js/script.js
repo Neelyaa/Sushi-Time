@@ -15,6 +15,25 @@ AOS.init({
     offset: 100,
 });
 
+/* Back to top button */ 
+
+var btn = document.getElementById('scrollbtn');
+
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 800) {
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+    btn.classList.add('exit');
+  }
+});
+
+btn.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
 const trendingSushis = [
     'Make Sushi',
     'Nigiri Sushi',
