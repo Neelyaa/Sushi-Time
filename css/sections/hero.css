@@ -60,7 +60,7 @@
 }
 
 .hero-content p {
-    margin: 32px 0 0 32px;
+    margin: 32px 0;
     font-family: var(--plus-jakarta-sans);
     color: var(--secondary-color);
     font-size: 18px;
