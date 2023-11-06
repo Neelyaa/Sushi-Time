@@ -12,46 +12,7 @@ AOS.init({
   offset: 100,
 });
 
-// Const Sushis, Drinks & Card
-
-const trendingSushis = [
-  'Make Sushi',
-  'Nigiri Sushi',
-  'Oshizushi',
-  'Temaki Sushi',
-  'Uramaki Sushi',
-  'Inari Sushi'
-]
-
-const trendingDrinks = [
-  "Oruncha",
-  "Ofukucha",
-  "Thé Sakura",
-  "Kombu-cha",
-  "Aojiru",
-  "Mugicha",
-]
-
-document.addEventListener('DOMContentLoaded', function () {
-
-  const lists = document.querySelectorAll('.trending__list');
-
-  lists.forEach(list => {
-    const category = list.dataset.category;
-    const items = list.querySelectorAll('li p');
-
-    if (category === 'sushis') {
-      trendingSushis.forEach((item, index) => {
-        items[index].textContent = item;
-      });
-    } else if (category === 'drinks') {
-      trendingDrinks.forEach((item, index) => {
-        items[index].textContent = item;
-      });
-    }
-  });
-});
-
+// Const Cards, Sushis and Drinks
 
 const cards = [
   {
@@ -100,6 +61,47 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+const trendingSushis = [
+  'Make Sushi',
+  'Nigiri Sushi',
+  'Oshizushi',
+  'Temaki Sushi',
+  'Uramaki Sushi',
+  'Inari Sushi'
+]
+
+const trendingDrinks = [
+  "Oruncha",
+  "Ofukucha",
+  "Thé Sakura",
+  "Kombu-cha",
+  "Aojiru",
+  "Mugicha",
+]
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  const lists = document.querySelectorAll('.trending__list');
+
+  lists.forEach(list => {
+    const category = list.dataset.category;
+    const items = list.querySelectorAll('li p');
+
+    let trendingItems;
+
+    if (category === 'sushis') {
+      trendingItems = trendingSushis;
+    } else if (category === 'drinks') {
+      trendingItems = trendingDrinks;
+    }
+
+    trendingItems.map((item, index) => {
+      items[index].textContent = item;
+    });
+  });
+});
+
 
 // Menu Burger
 
